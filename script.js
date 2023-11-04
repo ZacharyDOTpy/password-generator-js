@@ -9,10 +9,28 @@ var symbol = "!@#$%^&*()[]}{|?/<>+=_-";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Write password to the #password input
+function writePassword() {
+  var correctPrompts = userPrompts();
+  var passwordText = document.querySelector("#password");
+// Added if else statement for writePassword function
+// Changed var password to var newPassword
+  if(correctPrompts) {
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
+  } else {
+    passwordText.value = "";
+  }
+}
+
 // Added for loop to generatePassword function
 function generatePassword() {
   var password = "";
-  for(var i = 0; i < charLength.length; i++) {
+  for(var i = 0; i < charLength; i++) {
     var randomChar = Math.floor(Math.random() * possible.length);
     password = password + possible[randomChar];
   }
@@ -40,23 +58,9 @@ function userPrompts() {
   }
   if(confirm("Would you like symbols in your password?")) {
     possible = possible.concat(symbol);
+  } else {
+    alert("Must select at least one character set. Please try again.")
   }
   return true;
-}
-
-// Write password to the #password input
-function writePassword() {
-  var correctPrompts = userPrompts();
-  var passwordText = document.querySelector("#password");
-// Added if else statement for writePassword Function
-// Changed var password to var newPassword
-  if(correctPrompts) {
-    var newPassword = generatePassword();
-    passwordText.value = newPassword;
-  } else {
-    passwordText.value = "";
-  }
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+} 
+// Added else statement if user doesnt select any character sets from prompts
