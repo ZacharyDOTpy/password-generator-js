@@ -1,3 +1,12 @@
+// Added variables
+var charLength = 8;
+var possible = "";
+
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var number = "0123456789";
+var symbol = "!@#$%^&*()[]}{|?/<>+=_-";
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
