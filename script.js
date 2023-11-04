@@ -47,15 +47,15 @@ function userPrompts() {
 // Write password to the #password input
 function writePassword() {
   var correctPrompts = userPrompts();
-
+  var passwordText = document.querySelector("#password");
+// Added if else statement for writePassword Function
+// Changed var password to var newPassword
   if(correctPrompts) {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    
-    passwordText.value = password;
+    var newPassword = generatePassword();
+    passwordText.value = newPassword;
+  } else {
+    passwordText.value = "";
   }
-
-
 }
 
 // Add event listener to generate button
