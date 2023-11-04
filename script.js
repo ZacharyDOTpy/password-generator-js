@@ -9,12 +9,19 @@ var symbol = "!@#$%^&*()[]}{|?/<>+=_-";
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// Added for loop to generatePassword function
 function generatePassword() {
-
+  var password = "";
+  for(var i = 0; i < charLength.length; i++) {
+    var randomChar = Math.floor(Math.random() * possible.length);
+    password = password + possible[randomChar];
+  }
+  return password;
 }
 // Added userPrompts function and if statement
 function userPrompts() {
+  possible = "";
+
   charLength = parseInt(prompt("How many characters would you like your password to be? (8 - 128 characters)"));
 
   if(isNaN(charLength) || charLength < 8 || charLength > 128) {
@@ -39,10 +46,15 @@ function userPrompts() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var correctPrompts = userPrompts();
 
-  passwordText.value = password;
+  if(correctPrompts) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    
+    passwordText.value = password;
+  }
+
 
 }
 
