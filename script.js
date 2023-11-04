@@ -58,9 +58,7 @@ function userPrompts() {
   }
   if(confirm("Would you like symbols in your password?")) {
     possible = possible.concat(symbol);
-  } else {
-    alert("Must select at least one character set. Please try again.")
-  }
+  } 
   return true;
-} 
+}
 // Added else statement if user doesnt select any character sets from prompts
