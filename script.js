@@ -13,6 +13,15 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 
 }
+// Added userPrompts function and if statement
+function userPrompts() {
+  charLength = parseInt(prompt("How many characters would you like your password to be? (8 - 128 characters)"));
+
+  if(isNaN(charLength) || charLength < 8 || charLength > 128) {
+    alert("Character length must be a number between 8 - 128. Please try again.");
+    return false;
+  }
+}
 
 // Write password to the #password input
 function writePassword() {
