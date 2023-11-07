@@ -19,7 +19,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 // Added if else statement for writePassword function
 // Changed var password to var newPassword
-  if(correctPrompts) {
+  if (correctPrompts) {
     var newPassword = generatePassword();
     passwordText.value = newPassword;
   } else {
@@ -30,7 +30,7 @@ function writePassword() {
 // Added for loop to generatePassword function
 function generatePassword() {
   var password = "";
-  for(var i = 0; i < charLength; i++) {
+  for (var i = 0; i < charLength; i++) {
     var randomChar = Math.floor(Math.random() * possible.length);
     password = password + possible[randomChar];
   }
@@ -42,21 +42,21 @@ function userPrompts() {
 
   charLength = parseInt(prompt("How many characters would you like your password to be? (8 - 128 characters)"));
 
-  if(isNaN(charLength) || charLength < 8 || charLength > 128) {
+  if (isNaN(charLength) || charLength < 8 || charLength > 128) {
     alert("Character length must be a number between 8 - 128. Please try again.");
     return false;
   }
 // Added if statements for what characters the user wants
-  if(confirm("Would you like lowercase letters in your password?")) {
+  if (confirm("Would you like lowercase letters in your password?")) {
     possible = possible.concat(lowerCase);
   }
-  if(confirm("Would you like uppercase letters in your password?")) {
+  if (confirm("Would you like uppercase letters in your password?")) {
     possible = possible.concat(upperCase);
   }
-  if(confirm("Would you like numbers in your password?")) {
+  if (confirm("Would you like numbers in your password?")) {
     possible = possible.concat(number);
   }
-  if(confirm("Would you like symbols in your password?")) {
+  if (confirm("Would you like symbols in your password?")) {
     possible = possible.concat(symbol);
   } 
   return true;
