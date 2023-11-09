@@ -8,4 +8,4 @@ In this challenge I used for loops to select random characters from a specific c
 ![Screenshot of Portfolio](./screenshots/Password%20Generator.png)
 
 ## Link
-[Link to deployed site](https://github.com/ZacharyDOTpy/password-generator-js)
+[Link to deployed site](https://zacharydotpy.github.io/password-generator-js/)
