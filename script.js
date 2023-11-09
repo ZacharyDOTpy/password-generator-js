@@ -17,8 +17,8 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   var correctPrompts = userPrompts();
   var passwordText = document.querySelector("#password");
-// Added if else statement for writePassword function
-// Changed var password to var newPassword
+  // Added if else statement for writePassword function
+  // Changed var password to var newPassword
   if (correctPrompts) {
     var newPassword = generatePassword();
     passwordText.value = newPassword;
@@ -46,7 +46,7 @@ function userPrompts() {
     alert("Character length must be a number between 8 - 128. Please try again.");
     return false;
   }
-// Added if statements for what characters the user wants
+  // Added if statements for what characters the user wants
   if (confirm("Would you like lowercase letters in your password?")) {
     possible = possible.concat(lowerCase);
   }
@@ -58,7 +58,7 @@ function userPrompts() {
   }
   if (confirm("Would you like symbols in your password?")) {
     possible = possible.concat(symbol);
-  } 
+  }
   return true;
 }
 // Added else statement if user doesnt select any character sets from prompts
